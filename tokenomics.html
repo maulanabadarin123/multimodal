@@ -7,6 +7,45 @@
   <title>Multimodal AI</title>
   <link rel="shortcut icon" type="image/png" href="src/assets/img/mmai.png" />
   <link rel="stylesheet" href="./src/assets/css/styles.min.css" />
+  <script type="text/javascript">
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer",
+      {
+        title:{
+          text: "Detail and Percentage",
+          fontFamily: "Impact",
+          fontWeight: "normal"
+        },
+  
+        legend:{
+          verticalAlign: "bottom",
+          horizontalAlign: "center"
+        },
+        data: [
+        {
+          //startAngle: 45,
+         indexLabelFontSize: 20,
+         indexLabelFontFamily: "Garamond",
+         indexLabelFontColor: "darkgrey",
+         indexLabelLineColor: "darkgrey",
+         indexLabelPlacement: "outside",
+         type: "doughnut",
+         showInLegend: true,
+         dataPoints: [
+         {  y: 80, legendText:"Token Swap 80%", indexLabel: "Token Swap 80%" },
+         {  y: 5, legendText:"Staking Pool 5%", indexLabel: "Staking Pool 5%" },
+         {  y: 5, legendText:"Development Team 5%", indexLabel: "Development Team 5%" },
+         {  y: 5, legendText:"Affiliate Team 5%", indexLabel: "Affiliate Team 5%" },
+         {  y: 5, legendText:"Others 5%", indexLabel: "Others 5%" }
+         ]
+       }
+       ]
+     });
+  
+      chart.render();
+    }
+    </script>
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -99,40 +138,18 @@
           <div class="card-body">
             <h1 class="mt-5 mb-4">Tokenomics
             </h1>
-            <ul style="line-height: 50px;text-align:justify;font-size:25px;">
+            <ul style="line-height: 50px;font-size:25px;">
                 <li>Token name : <span>Multimodal AI</span></li>
                  <li>Ticker : <span>$MMAI</span></li>
                  <li>Supply : <span>100,000,000</span></li>
-                 <li> CA : <span>100,000,000</span></li>
+                 <li> CA : <span>0x...</span></li>
            </ul>
-             <table class="table table-bordered border border-top-0 border-bottom-0" style="font-size: 25px;">
-                <thead>
-                  <tr>
-                    <th scope="col">Details</th>
-                    <th scope="col">Persentage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Token Swap</th>
-                    <td>80</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Staking Pool</th>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Development Team</th>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Affiliate Team</th>
-                    <td>5</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div id="chartContainer" style="height: 300px; width: 100%;">
+              </div>    
              </div>
           </div>
+          <canvas id="donutChart" width="100" height="100"></canvas>
+
         </div>
       </div>
     </div>
@@ -142,6 +159,7 @@
   <script src="./src/assets/js/sidebarmenu.js"></script>
   <script src="./src/assets/js/app.min.js"></script>
   <script src="./src/assets/libs/simplebar/dist/simplebar.js"></script>
+
 </body>
 
 </html>
